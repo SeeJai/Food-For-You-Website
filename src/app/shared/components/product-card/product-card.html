@@ -1,7 +1,18 @@
-<p>product-card works!</p>
 <div class="card">
-  <img [src]="product.image" />
+
+  <div class="badge-container" *ngIf="product.tags?.length">
+    <span
+      *ngFor="let tag of product.tags"
+      [ngClass]="tag.toLowerCase()">
+      {{ tag }}
+    </span>
+  </div>
+
+  <img [src]="product.image" [alt]="product.name" />
+
   <h3>{{ product.name }}</h3>
   <p>₹{{ product.price }}</p>
-  <button [routerLink]="['/product', product.id]">View</button>
+
+  <button>Add to Cart</button>
+
 </div>

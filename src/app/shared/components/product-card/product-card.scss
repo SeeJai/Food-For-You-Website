@@ -46,3 +46,34 @@
   transform: translateY(-8px);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
+
+.badge-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+
+  span {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .bestseller {
+    background: #d35400;
+  }
+
+  .healthy {
+    background: #27ae60;
+  }
+
+  .seasonal {
+    background: #f39c12;
+  }
+
+  .new {
+    background: #2980b9;
+  }
+}
