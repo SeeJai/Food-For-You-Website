@@ -1,0 +1,29 @@
+.hero {
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1605478035135-14a44c43a9c5') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+
+  .hero-content {
+    background: rgba(0,0,0,0.5);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  button {
+    margin-top: 1rem;
+    padding: 0.7rem 2rem;
+    border: none;
+    background: #ff8c42;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+  }
+}
