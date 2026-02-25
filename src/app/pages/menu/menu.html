@@ -1,3 +1,32 @@
+<div class="category-bar">
+  <button
+    [class.active]="selectedCategoryId === null"
+    (click)="filterByCategory(null)">
+    All
+  </button>
+
+  <button
+    *ngFor="let category of categories"
+    [class.active]="selectedCategoryId === category.id"
+    (click)="filterByCategory(category.id)">
+    {{ category.name }}
+  </button>
+</div>
+
+<div class="category-banner">
+  <h2>
+    {{ selectedCategory ? selectedCategory.name : 'Our Menu' }}
+  </h2>
+
+  <p>
+    {{
+      selectedCategory
+        ? selectedCategory.description
+        : 'Explore all our freshly baked products'
+    }}
+  </p>
+</div>
+
 <div class="menu-grid">
   <app-product-card
     *ngFor="let product of products"
