@@ -1,4 +1,4 @@
-<div class="card" [routerLink]="['/product', product.id]">
+<div class="card">
 
   <div class="badge-container" *ngIf="product.tags?.length">
     <span
@@ -8,11 +8,19 @@
     </span>
   </div>
 
-  <img [src]="product.image" [alt]="product.name" />
+  <div
+    class="clickable-area"
+    [routerLink]="['/product', product.id]">
 
-  <h3>{{ product.name }}</h3>
+    <img [src]="product.image" [alt]="product.name" />
+
+    <h3>{{ product.name }}</h3>
+  </div>
+
   <p>₹{{ product.price }}</p>
 
-  <button (click)="addToCart($event)">Add to Cart</button>
+  <button (click)="addToCart($event)">
+    Add to Cart
+  </button>
 
 </div>

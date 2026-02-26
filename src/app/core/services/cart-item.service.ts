@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { CartItem } from '../models/cart-item.model';
 import { Product } from '../models/product.model';
 
@@ -7,6 +8,9 @@ import { Product } from '../models/product.model';
 })
 export class CartService {
     private items: CartItem[] = [];
+
+    private cartCountSubject = new BehaviorSubject<number>(0);
+    cartCount$ = this.cartCountSubject.asObservable();
 
     getCartItems() {
         return this.items;
@@ -27,12 +31,14 @@ export class CartService {
                     quantity: 1
                 });
             }
+            this.updateCartCount();
     }
 
     removeFromCart(productId: number) {
         this.items = this.items.filter(
             item => item.productId !== productId
         );
+        this.updateCartCount();
     }
 
     getTotalAmount(){
@@ -41,9 +47,9 @@ export class CartService {
         );
     }
 
-    getCartCount() {
-        return this.items.reduce(
-            (count, item) => count+ item.quantity,0
-        );
+    private updateCartCount(){
+        const count = this.items.reduce((total, item) => total + item.quantity,0);
+        this.cartCountSubject.next(count);
+        
     }
 }

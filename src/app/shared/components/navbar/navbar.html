@@ -6,6 +6,12 @@
         <li routerLink="/menu">Menu</li>
         <li routerLink="/about">About</li>
         <li routerLink="/contact">Contact</li>
-        <li routerLink="/cart">Cart</li>
+        <li> <a routerLink="/cart" class="cart-link">
+            Cart
+            <span class="cart-badge" *ngIf="(cartCount$ | async) as count">
+                {{ count }}
+            </span>
+            </a>
+        </li>
     </ul>
 </nav>
