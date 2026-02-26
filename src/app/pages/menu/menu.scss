@@ -24,6 +24,28 @@
   }
 }
 
+.menu-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 3rem;
+  flex-wrap: wrap;
+
+  input {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+  select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+}
+
 .category-banner {
   padding: 2rem 3rem;
   background: linear-gradient(90deg, #fff5e1, #fdebd3);
