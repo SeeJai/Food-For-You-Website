@@ -1,0 +1,40 @@
+.details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 3rem;
+  background: #fdf8f3;
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .info-section {
+    h2 {
+      font-size: 2rem;
+      color: #6b3e26;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1rem 0;
+      color: #4b2e22;
+    }
+
+    .description {
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    button {
+      background: #6b3e26;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+  }
+}
