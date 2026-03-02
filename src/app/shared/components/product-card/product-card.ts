@@ -14,10 +14,18 @@ import { CartService } from '../../../core/services/cart-item.service';
 export class ProductCardComponent {
   constructor(private cartService: CartService){}
 
+  isAdded = false;
+
   @Input() product!: Product;
 
   addToCart(event: Event) {
     event.stopPropagation();
     this.cartService.addTocart(this.product);
+
+    this.isAdded = true;
+
+    setTimeout(() => {
+      this.isAdded = false;
+    }, 1200);
   }
 }

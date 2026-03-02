@@ -19,8 +19,8 @@
 
   <p>₹{{ product.price }}</p>
 
-  <button (click)="addToCart($event)">
-    Add to Cart
+  <button (click)="addToCart($event)" [class.added]="isAdded">
+    {{ isAdded ? '✔ Added' : 'Add to Cart' }}
   </button>
 
 </div>
