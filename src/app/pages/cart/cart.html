@@ -17,6 +17,12 @@
       <p>₹{{ item.price }} x {{ item.quantity }}</p>
     </div>
 
+    <div class="quantity-controls">
+      <button (click)="decrease(item.productId)">−</button>
+      <span>{{ item.quantity }}</span>
+      <button (click)="increase(item.productId)">+</button>
+    </div>
+
     <button (click)="remove(item.productId)">Remove</button>
 
   </div>

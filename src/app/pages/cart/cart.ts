@@ -14,8 +14,15 @@ export class Cart {
 
   constructor(public cartService: CartService) {}
 
-    remove(id: number) {
-      this.cartService.removeFromCart(id);
-    }
+  increase(id: number){
+    this.cartService.increaseQuantity(id);
+  }
 
+  decrease(id: number){
+    this.cartService.decreaseQuantity(id);
+  }
+
+  remove(id: number) {
+    this.cartService.removeFromCart(id);
+  }
 }

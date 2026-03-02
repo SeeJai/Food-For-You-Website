@@ -41,6 +41,32 @@ export class CartService {
         this.updateCartCount();
     }
 
+    increaseQuantity(ProductID: number){
+        const item = this.items.find(
+            i => i.productId === ProductID
+        );
+        if(item) {
+            item.quantity++;
+            this.updateCartCount();
+        }
+    }
+
+    decreaseQuantity(productId: number){
+        const item = this.items.find(
+            i => i.productId ===productId
+        );
+        if (item) {
+            item.quantity--;
+
+            if(item.quantity <= 0){
+                this.removeFromCart(productId);
+            }
+            else{
+                this.updateCartCount();
+            }
+        }
+    }
+
     getTotalAmount(){
         return this.items.reduce(
             (total, item) => total + item.price * item.quantity,0

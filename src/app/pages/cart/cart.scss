@@ -67,3 +67,24 @@
   color: #777;
   margin-bottom: 1rem;
 }
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.8rem 0;
+
+  button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    background: #6b3e26;
+    color: white;
+    cursor: pointer;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
